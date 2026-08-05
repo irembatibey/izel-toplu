@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Phase 2 — Design Foundation: brand color tokens.
+ *
+ * RGB triplets (not hex) so Tailwind's `rgb(var(...) / <alpha-value>)`
+ * pattern in tailwind.config.ts can apply opacity modifiers
+ * (e.g. bg-brand-cta/50) without a separate set of pre-mixed colors.
+ *
+ * Every value maps 1:1 to the approved Brand Style Guide v3 —
+ * see the Phase 2 engineering report for the mapping table.
+ */
+:root {
+  --color-brand-900: 36 51 63;      /* #24333F — deep slate */
+  --color-brand-800: 46 67 86;      /* #2E4356 — headings, nav */
+  --color-brand-700: 60 87 114;     /* #3C5772 */
+  --color-brand-600: 78 114 145;    /* #4E7291 — default icon/body accent */
+  --color-brand-cta: 62 124 181;    /* #3E7CB5 — primary CTA blue */
+  --color-brand-cta-dark: 47 99 143;/* #2F638F — CTA hover */
+  --color-brand-300: 169 196 214;   /* #A9C4D6 */
+  --color-brand-200: 201 220 231;   /* #C9DCE7 */
+  --color-brand-surface: 238 244 248;     /* #EEF4F8 */
+  --color-brand-surface-100: 227 237 244; /* #E3EDF4 */
+
+  --color-neutral-text: 52 56 61;        /* #34383D */
+  --color-neutral-text-soft: 108 118 128;/* #6C7680 */
+  --color-neutral-border: 220 230 236;   /* #DCE6EC */
+  --color-neutral-bg: 255 255 255;       /* #FFFFFF */
+  --color-neutral-bg-soft: 247 250 252;  /* #F7FAFC */
+
+  /*
+   * Font family variables — declared here so tailwind.config.ts
+   * has something to point at even before Phase 3 wires up
+   * next/font in the root layout. next/font will overwrite these
+   * at the html/body level once implemented; until then, the
+   * fallback stacks in tailwind.config.ts apply.
+   */
+  --font-newsreader: initial;
+  --font-inter: initial;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-bg text-neutral-text font-sans text-body;
+  }
+
+  /*
+   * Accessible focus states, sitewide. Uses the brand palette
+   * rather than the browser default outline (which is inconsistent
+   * across browsers) or removing it entirely (which breaks
+   * keyboard accessibility) — satisfies the accessibility
+   * checklist item "visible focus states" without waiting for
+   * per-component implementation.
+   */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-brand-cta));
+    outline-offset: 2px;
+  }
+}
+
+/*
+ * Respect prefers-reduced-motion sitewide. This is a foundational,
+ * non-negotiable accessibility requirement agreed from the start
+ * of the project — placed in the global stylesheet rather than
+ * left to each component to remember individually.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
