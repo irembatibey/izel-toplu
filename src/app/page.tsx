@@ -1,13 +1,27 @@
+import { Hero } from '@/components/sections/Hero';
+import { TrustIndicators } from '@/components/sections/TrustIndicators';
+import { AboutPreview } from '@/components/sections/AboutPreview';
+import { TherapyAreasPreview } from '@/components/sections/TherapyAreasPreview';
+import { TherapyProcessPreview } from '@/components/sections/TherapyProcessPreview';
+import { TestimonialsPreview } from '@/components/sections/TestimonialsPreview';
+import { FinalCTA } from '@/components/sections/FinalCTA';
+
 /**
- * Phase 1 scope: placeholder only, to verify the build pipeline
- * end to end. The approved Home page design (hero, trust strip,
- * "why choose me" cards, etc.) is built in a later phase once
- * design tokens (Phase 2) and shared components exist.
+ * Phase 4: complete homepage. Order matches the agreed structure —
+ * Hero, Trust Indicators, About Preview, Therapy Areas, Therapy
+ * Process, Testimonials (placeholder), Final CTA. No other pages
+ * are implemented yet.
  */
 export default function HomePage() {
   return (
-    <main>
-      <p>İzel Toplu — proje iskeleti hazırlanıyor.</p>
-    </main>
+    <>
+      <Hero />
+      <TrustIndicators />
+      <AboutPreview />
+      <TherapyAreasPreview />
+      <TherapyProcessPreview />
+      <TestimonialsPreview />
+      <FinalCTA />
+    </>
   );
 }
