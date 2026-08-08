@@ -34,7 +34,7 @@ export function Card({ icon: Icon, title, description, href, linkLabel }: CardPr
       <h3 className="mb-2 text-h3 font-semibold text-brand-900">{title}</h3>
       <p className="text-body text-neutral-text-soft">{description}</p>
       {href && linkLabel && (
-        <span className="mt-4 inline-flex items-center gap-1.5 text-body font-semibold text-brand-cta">
+        <span className="mt-4 inline-flex items-center gap-1.5 text-body font-semibold text-brand-cta-dark">
           {linkLabel}
           <ArrowRight
             className="h-4 w-4 transition-transform duration-280 ease-brand-ease group-hover:translate-x-1"

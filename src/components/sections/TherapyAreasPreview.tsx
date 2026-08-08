@@ -1,51 +1,19 @@
-import { Sprout, Mic, Repeat, Brain, Volume2 } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
+import { getServiceSummaries } from '@/content/services';
 
-// Plain-language, general clinical descriptions (not claims specific
-// to the therapist) — consistent with the "explain simply, avoid
-// unexplained jargon" content principle agreed during the content
-// strategy phase. Slugs match the naming convention already agreed
-// for individual service pages, which don't exist yet — these links
-// will 404 until that later phase is built; disclosed in the
-// engineering report, not a defect.
-const THERAPY_AREAS = [
-  {
-    slug: 'gecikmis-dil-gelisimi',
-    icon: Sprout,
-    title: 'Gecikmiş Dil Gelişimi',
-    description: 'Çocuğunuzun yaşına göre beklenen dil becerilerinde gecikme yaşanması durumları.',
-  },
-  {
-    slug: 'artikulasyon-bozukluklari',
-    icon: Mic,
-    title: 'Artikülasyon Bozuklukları',
-    description: 'Seslerin doğru şekilde üretilememesiyle ortaya çıkan konuşma güçlükleri.',
-  },
-  {
-    slug: 'kekemelik',
-    icon: Repeat,
-    title: 'Kekemelik',
-    description: 'Konuşma akıcılığını etkileyen tekrar, uzatma veya duraksama şeklindeki güçlükler.',
-  },
-  {
-    slug: 'afazi',
-    icon: Brain,
-    title: 'Afazi',
-    description: 'Beyin hasarı sonrası dil anlama veya ifade etmede yaşanan güçlükler.',
-  },
-  {
-    slug: 'ses-bozukluklari',
-    icon: Volume2,
-    title: 'Ses Bozuklukları',
-    description: 'Ses tonu, perdesi veya kalitesinde yaşanan değişiklikler.',
-  },
-] as const;
-
+/**
+ * Phase 5 change: data moved to src/content/services/index.ts
+ * (single source of truth shared with the Services Index page) —
+ * see that file's comments. Everything else in this component is
+ * unchanged from the approved Phase 4 polish.
+ */
 export function TherapyAreasPreview() {
+  const services = getServiceSummaries();
+
   return (
     <section aria-labelledby="therapy-areas-heading" className="bg-neutral-bg-soft py-20 md:py-28">
       <Container>
@@ -59,13 +27,13 @@ export function TherapyAreasPreview() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {THERAPY_AREAS.map((area, index) => (
-            <Reveal key={area.slug} delay={index * 0.08}>
+          {services.map((service, index) => (
+            <Reveal key={service.slug} delay={index * 0.08}>
               <Card
-                icon={area.icon}
-                title={area.title}
-                description={area.description}
-                href={`/hizmetler/${area.slug}`}
+                icon={service.icon}
+                title={service.title}
+                description={service.shortDescription}
+                href={`/hizmetler/${service.slug}`}
                 linkLabel="Detaylı bilgi"
               />
             </Reveal>

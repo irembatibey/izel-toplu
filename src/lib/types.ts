@@ -1,21 +1,34 @@
+import type { LucideIcon } from 'lucide-react';
+
 /**
  * Shared content/domain types.
  *
- * Phase 1 scope: the shapes we already agreed on during content
- * strategy, so MDX frontmatter has a type contract to target in a
- * later phase. Not wired to any parsing logic yet — see mdx.ts.
+ * Replaces the Phase 1 placeholder ServiceFrontmatter shape (never
+ * used by any real code) with the actual shapes Phase 5 needs. Split
+ * into a lightweight Summary (used for cards — homepage Therapy
+ * Areas preview and the Services Index) and a full Detail (used by
+ * the Service Detail Template) so listing pages don't need full
+ * detail content to exist for a service to appear in a card grid.
  */
-
-export interface ServiceFrontmatter {
-  slug: string;
-  title: string;
-  shortDescription: string;
-  seoDescription: string;
-  icon: string; // maps to a lucide-react icon name
-  relatedSlugs?: string[];
-}
 
 export interface FAQItem {
   question: string;
   answer: string;
+}
+
+export interface ServiceSummary {
+  slug: string;
+  title: string;
+  shortDescription: string;
+  icon: LucideIcon;
+}
+
+export interface ServiceDetail extends ServiceSummary {
+  seoDescription: string;
+  overview: string;
+  symptoms: string[];
+  whoCanBenefit: string;
+  process: string;
+  faq: FAQItem[];
+  relatedSlugs?: string[];
 }
