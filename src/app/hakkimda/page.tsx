@@ -6,14 +6,16 @@ import { SectionHeading } from '@/components/common/SectionHeading';
 import { Reveal } from '@/components/common/Reveal';
 import { PageHero } from '@/components/common/PageHero';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
+import { ExperienceTimeline } from '@/components/about/ExperienceTimeline';
 import { FinalCTA } from '@/components/sections/FinalCTA';
+import { EXPERIENCE_TIMELINE } from '@/content/about/experience';
 
 export const metadata: Metadata = {
   title: 'Hakkımda',
-  description: 'İzel Toplu hakkında — eğitim, yaklaşım ve çalışma felsefesi.',
+  description: 'İzel Toplu hakkında — eğitim, klinik deneyim, yaklaşım ve çalışma felsefesi.',
 };
 
-const PORTRAIT_SRC = '/images/placeholders/portrait-placeholder.svg';
+const PORTRAIT_SRC = '/images/portrait/about_photo.jpeg';
 
 // Approach points restate the same approved strength categories used
 // on the homepage (evidence-based, individualized, cross-age
@@ -28,17 +30,11 @@ const APPROACH_POINTS = [
   'Gerektiğinde aile ve diğer uzmanlarla koordineli çalışma.',
 ] as const;
 
-// No real credentials have been provided yet — these stay explicit,
-// bracketed placeholders rather than invented degrees/certificates,
-// per instruction.
-const EDUCATION_PLACEHOLDERS = [
-  '[PLACEHOLDER: Lisans derecesi — üniversite, yıl]',
-  '[PLACEHOLDER: Lisansüstü eğitim — üniversite, yıl]',
-] as const;
-
-const CERTIFICATE_PLACEHOLDERS = [
-  '[PLACEHOLDER: Sertifika adı — kurum, yıl]',
-  '[PLACEHOLDER: Sertifika adı — kurum, yıl]',
+// Real education information as provided — no dates, institutions,
+// or degrees beyond what was stated are included.
+const EDUCATION_ITEMS = [
+  'İstinye Üniversitesi, Sağlık Bilimleri Fakültesi — Dil ve Konuşma Terapisi (Lisans), 2026, onur derecesiyle mezuniyet',
+  'Psikoloji Yandal Programı — devam ediyor',
 ] as const;
 
 export default function AboutPage() {
@@ -49,24 +45,38 @@ export default function AboutPage() {
 
       {/* Professional introduction */}
       <section aria-labelledby="about-intro-heading" className="py-20 md:py-28">
-        <Container className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+        <Container className="grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-brand-200/60 bg-brand-surface shadow-md">
+            <div
+                className="relative h-full min-h-[320px] overflow-hidden rounded-lg border border-brand-200/60 bg-brand-surface shadow-md">
               <Image
-                src={PORTRAIT_SRC}
-                alt="Profesyonel portre için ayrılmış alan — yakında eklenecek"
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                  src={PORTRAIT_SRC}
+                  alt="Profesyonel portre için ayrılmış alan — yakında eklenecek"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
               />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <SectionHeading id="about-intro-heading" eyebrow="Tanışalım" title="Kısaca Kendimden Bahsedeyim" />
-            <p className="mt-4 text-body text-neutral-text-soft">
-              İzel Toplu, çocuklarda ve yetişkinlerde dil ve konuşma gelişimini destekleyen, kanıta
-              dayalı ve kişiye özel bir yaklaşım benimseyen bir dil ve konuşma terapistidir.
-            </p>
+            <div className="mt-4 space-y-4 text-body text-neutral-text-soft">
+              <p>
+                İstinye Üniversitesi, Sağlık Bilimleri Fakültesi, Dil ve Konuşma Terapisi eğitimimi 2026 yılında onur derecesiyle tamamladım.
+                Lisans sürecim boyunca danışanlarıma daha bütüncül bir bakış açısıyla yaklaşabilmek adına Psikoloji alanında yandal eğitimime
+                devam etmekteyim.
+              </p>
+              <p>
+                Mesleki yolculuğum boyunca okul öncesi dönemdeki çocukların gelişim takibinden başlayarak özel eğitim merkezleri,
+              kamu hizmet birimleri ve kapsamlı hastanelere uzanan geniş bir yelpazede saha deneyimi kazandım.
+              </p>
+              <p>
+                Güncel olarak Bandırma’da Patika Dil, Konuşma ve Ergoterapi Merkezi’nde;
+                dil bozuklukları, konuşma sesi bozuklukları, akıcılık bozuklukları, motor konuşma bozuklukları,
+                nörojenik dil bozuklukları ile ses ve yutma bozuklukları alanlarında değerlendirme ve terapi hizmeti vermekteyim.
+              </p>
+
+            </div>
           </Reveal>
         </Container>
       </section>
@@ -96,7 +106,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading id="about-education-heading" eyebrow="Eğitim" title="Eğitim Geçmişi" />
             <ul className="mt-6 space-y-3">
-              {EDUCATION_PLACEHOLDERS.map((item) => (
+              {EDUCATION_ITEMS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-body text-neutral-text-soft">
                   <GraduationCap className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta" aria-hidden="true" />
                   {item}
@@ -107,25 +117,37 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Certificates */}
-      <section aria-labelledby="about-certificates-heading" className="bg-neutral-bg-soft py-20 md:py-28">
+      {/* Klinik ve Saha Deneyimi */}
+      <section aria-labelledby="about-experience-heading" className="bg-neutral-bg-soft py-20 md:py-28">
         <Container narrow>
           <Reveal>
-            <SectionHeading id="about-certificates-heading" eyebrow="Sertifikalar" title="Sertifikalar ve Eğitimler" />
-            <ul className="mt-6 space-y-3">
-              {CERTIFICATE_PLACEHOLDERS.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-body text-neutral-text-soft">
-                  <Award className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta" aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <SectionHeading
+              id="about-experience-heading"
+              eyebrow="Klinik ve Saha Deneyimi"
+              title="Profesyonel Yolculuğum"
+            />
+          </Reveal>
+          <ExperienceTimeline items={EXPERIENCE_TIMELINE} />
+        </Container>
+      </section>
+
+      {/* Certificates */}
+      <section aria-labelledby="about-certificates-heading" className="py-20 md:py-28">
+        <Container narrow>
+          <Reveal>
+            <SectionHeading id="about-certificates-heading" eyebrow="Sertifikalar" title="Sertifikalar ve Mesleki Eğitimler" />
+            <div className="mt-6 rounded-md border border-dashed border-brand-300 bg-neutral-bg-soft p-8 text-center">
+              <Award className="mx-auto mb-3 h-6 w-6 text-brand-300" aria-hidden="true" />
+              <p className="text-body text-neutral-text-soft">
+                Sertifika ve mesleki eğitim bilgileri yakında eklenecek.
+              </p>
+            </div>
           </Reveal>
         </Container>
       </section>
 
       {/* Working philosophy */}
-      <section aria-labelledby="about-philosophy-heading" className="py-20 md:py-28">
+      <section aria-labelledby="about-philosophy-heading" className="bg-neutral-bg-soft py-20 md:py-28">
         <Container narrow>
           <Reveal>
             <SectionHeading id="about-philosophy-heading" eyebrow="Çalışma Felsefesi" title="Çalışma Felsefem" />

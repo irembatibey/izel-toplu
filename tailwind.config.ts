@@ -104,6 +104,23 @@ const config: Config = {
         // to actual component need.
         content: '1200px',
       },
+      keyframes: {
+        // About page addition: a very subtle, ambient floating
+        // motion for the experience timeline's icon markers (2-4px
+        // range, per spec — 3px used here). Defined once as a
+        // token, applied via Tailwind's built-in `motion-safe:`
+        // variant (no custom media-query CSS needed — motion-safe
+        // already wraps this in @media (prefers-reduced-motion:
+        // no-preference) automatically), so it's disabled entirely,
+        // not just slowed down, when reduced motion is requested.
+        'gentle-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-3px)' },
+        },
+      },
+      animation: {
+        'gentle-float': 'gentle-float 6s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

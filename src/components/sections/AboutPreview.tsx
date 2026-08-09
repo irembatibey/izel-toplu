@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/common/SectionHeading';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
 
-const PORTRAIT_SRC = '/images/placeholders/portrait-placeholder.svg';
+const PORTRAIT_SRC = '/images/portrait/about_photo.jpeg';
 
 /**
  * Intentionally short and generic. Her actual personal narrative
@@ -34,8 +34,8 @@ export function AboutPreview() {
         <Reveal delay={0.1}>
           <SectionHeading id="about-preview-heading" eyebrow="Hakkımda" title="Kısaca Benim Hakkımda" />
           <p className="mt-4 text-body text-neutral-text-soft">
-            İzel Toplu, çocuklarda ve yetişkinlerde dil ve konuşma gelişimini destekleyen, kanıta
-            dayalı ve kişiye özel bir yaklaşım benimser.
+            İstinye Üniversitesi, Sağlık Bilimleri Fakültesi, Dil ve Konuşma Terapisi eğitimimi 2026 yılında onur derecesiyle tamamladım. Eğitim sürecimde farklı kurumlarda çocuk ve
+            yetişkinlerle çalışarak klinik deneyimi kazandım...
           </p>
           <div className="mt-6">
             <Button href="/hakkimda" variant="ghost">

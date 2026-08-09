@@ -4,7 +4,7 @@ import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
 
-const PORTRAIT_SRC = '/images/placeholders/portrait-placeholder.svg';
+const PORTRAIT_SRC = '/images/placeholders/prof_foto.png';
 
 // Compact trust row under the CTAs. Two of these three are
 // explicit, bracketed placeholders — her actual years of experience
@@ -19,8 +19,8 @@ const PORTRAIT_SRC = '/images/placeholders/portrait-placeholder.svg';
 // as "time/experience", a closer semantic match for what this
 // item will eventually say.
 const HERO_TRUST_ITEMS = [
-  { icon: Clock, label: '[PLACEHOLDER: X yıl deneyim]' },
-  { icon: Building2, label: '[PLACEHOLDER: Kurum adı]' },
+  { icon: Clock, label: '1 yıl deneyim' },
+  { icon: Building2, label: 'Bandırma Patika Dil, Konuşma ve Ergoterapi Merkezi' },
   { icon: Users, label: 'Çocuk ve yetişkin danışanlar' },
 ] as const;
 
@@ -65,15 +65,31 @@ export function Hero() {
 
           <Reveal delay={0.1}>
             <h1 id="hero-heading" className="font-serif text-display text-brand-900">
-              Çocuğunuzun ve sizin sesinizi bulmanıza yardımcı oluyorum
+              “İletişimde engel yoktur, keşfedilmeyi bekleyen bir yol vardır.”
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="max-w-md text-body text-neutral-text-soft">
-              Konuşma ve dil gelişimi konusunda kanıta dayalı, kişiye özel destek — güvenli ve
-              sıcak bir ortamda.
-            </p>
+            <div className="mt-4 space-y-4 text-body text-neutral-text-soft">
+              <p>
+                  Merhaba, ben Dil ve Konuşma Terapisti İzel Toplu.
+              </p>
+                <p>
+                Çocukluktan yetişkinliğe kadar her bireyin kendini özgür, anlaşılır ve güvenle ifade edebilme hakkına sahip olduğuna inanıyorum.
+                    Bu doğrultuda terapi süreçlerimi yalnızca standart klinik uygulamalarla sınırlamıyor;
+                    her danışanımın bireysel ihtiyaçlarına, güçlü yönlerine ve yaşam dinamiklerine uygun,
+                    kişiye özel yaklaşımlar geliştiriyorum.
+                </p>
+                <p>
+                   Dil ve konuşma alanında ihtiyaç duyulan desteği, güncel ve bilimsel yöntemler ile güvenli ve destekleyici bir ortamda sunuyorum.
+                    Amacım; danışanlarımın iletişim becerilerini güçlendirerek, kendilerini daha özgür ifade edebilmelerini sağlamak ve
+                    potansiyellerini en iyi şekilde ortaya çıkarmalarına eşlik etmektir.
+                </p>
+                <p>
+                    İletişimin getirdiği özgürlüğü birlikte keşfetmek için ilk adımı atın.
+                    Sizin için en doğru yolu birlikte belirleyelim.
+                </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.3}>

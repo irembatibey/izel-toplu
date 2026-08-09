@@ -32,3 +32,13 @@ export interface ServiceDetail extends ServiceSummary {
   faq: FAQItem[];
   relatedSlugs?: string[];
 }
+
+export interface ExperienceEntry {
+  institution: string;
+  location: string;
+  summary: string;
+  icon: LucideIcon;
+  category: 'Stajlar' | 'Çalışma Hayatı';
+  /** Marks the therapist's present, ongoing position. */
+  current?: boolean;
+}
