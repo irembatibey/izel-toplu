@@ -160,7 +160,7 @@ export default function ContactPage() {
                       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
                         <MapPin
                           className="h-4 w-4 text-brand-300"
-                          
+
                           aria-hidden="true"
                         />
                       </span>

@@ -1,6 +1,10 @@
 import { Sprout, Mic, Repeat, Brain, Volume2 } from 'lucide-react';
 import type { ServiceSummary, ServiceDetail } from '@/lib/types';
 import { gecikmisDilGelisimi } from './gecikmis-dil-gelisimi';
+import { artikulasyonBozukluklari } from './artikulasyon-bozukluklari';
+import { kekemelik } from './kekemelik';
+import { afazi } from './afazi';
+import { sesBozukluklari } from './ses-bozukluklari';
 
 /**
  * Single source of truth for the five therapy areas' summary data —
@@ -46,12 +50,18 @@ export const SERVICE_SUMMARIES: ServiceSummary[] = [
   },
 ];
 
-// Full detail content exists only for services actually built out —
-// currently one. Adding a new service page later means adding its
-// ServiceDetail object under content/services/ and registering it
-// here; SERVICE_SUMMARIES stays independent so index/homepage cards
-// for not-yet-built services can still render.
-const SERVICE_DETAILS: ServiceDetail[] = [gecikmisDilGelisimi];
+// Phase 7: all five services now have full detail content. Adding a
+// new service page in the future still means adding its ServiceDetail
+// object under content/services/ and registering it here;
+// SERVICE_SUMMARIES stays independent so index/homepage cards never
+// depend on detail content existing.
+const SERVICE_DETAILS: ServiceDetail[] = [
+  gecikmisDilGelisimi,
+  artikulasyonBozukluklari,
+  kekemelik,
+  afazi,
+  sesBozukluklari,
+];
 
 export function getServiceSummaries(): ServiceSummary[] {
   return SERVICE_SUMMARIES;

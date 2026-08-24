@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 // and none are invented here.
 const FAQ_ITEMS: FAQItem[] = [
   { question: 'Seanslar ne kadar sürüyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
-  { question: 'Ücretlendirme nasıl işliyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   { question: 'Online seans yapıyor musunuz?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   { question: 'İlk seansta neler oluyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   { question: 'Randevu nasıl alabilirim?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
