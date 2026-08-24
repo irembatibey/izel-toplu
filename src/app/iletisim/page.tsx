@@ -12,21 +12,12 @@ import { Reveal } from '@/components/common/Reveal';
 import { PageHero } from '@/components/common/PageHero';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { THERAPIST_CONTACT, INSTITUTION_CONTACT } from '@/content/contact';
 
 export const metadata: Metadata = {
   title: 'İletişim',
   description: 'İzel Toplu ile iletişime geçin.',
 };
-
-const INSTAGRAM_URL = 'https://www.instagram.com/dkt.izeltoplu/';
-const LINKEDIN_URL = 'https://tr.linkedin.com/in/izel-toplu-0745b3363';
-
-const PATIKA_ADDRESS =
-  'İhsaniye, Celal Atik Cd. No:56 D:1 A Blok, 10200 Bandırma/BALIKESİR';
-
-const MAP_URL = `https://www.google.com/maps?q=${encodeURIComponent(
-  PATIKA_ADDRESS
-)}&output=embed`;
 
 export default function ContactPage() {
   return (
@@ -77,37 +68,39 @@ export default function ContactPage() {
                     İzel Toplu
                   </p>
 
-                  <div className="mt-5 space-y-4">
-                    <a
-                      href="mailto:dkt.izeltoplu@gmail.com"
-                      className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
-                    >
-                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
-                        <Mail
-                          className="h-4 w-4 text-brand-300"
-                          aria-hidden="true"
+                      <div className="mt-5 space-y-4">
+                        <a
+                          href={THERAPIST_CONTACT.mailtoHref}
+                            className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
+                        >
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
+                          <Mail
+                              className="h-4 w-4 text-brand-300"
+                              aria-hidden="true"
                         />
-                      </span>
-                      <span className="pt-1">dkt.izeltoplu@gmail.com</span>
-                    </a>
+                        </span>
+                        <span className="pt-1">{THERAPIST_CONTACT.email}</span>
+                        </a>
 
-                    <a
-                      href={INSTAGRAM_URL}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
-                    >
-                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
-                        <Instagram
-                          className="h-4 w-4 text-brand-300"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <span className="pt-1">@dkt.izeltoplu</span>
-                    </a>
+                        <a
+                          href={THERAPIST_CONTACT.instagramUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
+                        >
+                          <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
+                            <Instagram
+                              className="h-4 w-4 text-brand-300"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          <span className="pt-1">
+                            @{THERAPIST_CONTACT.instagramHandle}
+                          </span>
+                        </a>
 
-                    <a
-                      href={LINKEDIN_URL}
+                      <a
+                      href={THERAPIST_CONTACT.linkedinUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
@@ -127,7 +120,7 @@ export default function ContactPage() {
 
                 <div>
                   <p className="text-caption font-semibold uppercase tracking-[0.12em] text-brand-300">
-                    Patika Dil, Konuşma ve Ergoterapi Merkezi
+                    {INSTITUTION_CONTACT.name}
                   </p>
 
                   <p className="mt-3 max-w-sm text-body text-neutral-bg/75">
@@ -137,8 +130,8 @@ export default function ContactPage() {
                   </p>
 
                   <div className="mt-6 space-y-4">
-                    <a
-                      href="tel:+905496960110"
+                      <a
+                      href={INSTITUTION_CONTACT.phoneHref}
                       className="flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
                     >
                       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
@@ -147,11 +140,11 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">0549 696 0110</span>
+                      <span className="pt-1">{INSTITUTION_CONTACT.phone}</span>
                     </a>
 
-                    <a
-                      href="mailto:info@patikadilkonusma.com"
+                      <a
+                      href={INSTITUTION_CONTACT.mailtoHref}
                       className="flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
                     >
                       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
@@ -160,17 +153,18 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">info@patikadilkonusma.com</span>
+                      <span className="pt-1">{INSTITUTION_CONTACT.email}</span>
                     </a>
 
                     <div className="flex items-start gap-3 text-body text-neutral-bg/75">
                       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
                         <MapPin
                           className="h-4 w-4 text-brand-300"
+                          
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">{PATIKA_ADDRESS}</span>
+                      <span className="pt-1">{INSTITUTION_CONTACT.address}</span>
                     </div>
                   </div>
                 </div>
@@ -205,16 +199,16 @@ export default function ContactPage() {
             <SectionHeading
               id="location-heading"
               eyebrow="Konum"
-              title="Patika Dil, Konuşma ve Ergoterapi Merkezi"
-              description={PATIKA_ADDRESS}
+              title={INSTITUTION_CONTACT.name}
+              description={INSTITUTION_CONTACT.address}
             />
           </Reveal>
 
           <Reveal delay={0.1}>
             <div className="mt-10 overflow-hidden rounded-lg border border-neutral-border bg-neutral-bg shadow-sm">
               <iframe
-                title="Patika Dil, Konuşma ve Ergoterapi Merkezi konumu"
-                src={MAP_URL}
+                title={INSTITUTION_CONTACT.mapTitle}
+                src={INSTITUTION_CONTACT.mapEmbedUrl}
                 className="h-[320px] w-full border-0 md:h-[420px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

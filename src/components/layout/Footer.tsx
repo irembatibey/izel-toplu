@@ -1,14 +1,13 @@
 import { Container } from '@/components/common/Container';
 import { SITE_NAME } from '@/lib/constants';
+import { THERAPIST_CONTACT, INSTITUTION_CONTACT } from '@/content/contact';
 
 /**
  * Server component, fully static — no interactivity, zero client JS.
  *
- * Content policy for this phase: every field below is either (a)
- * already-approved real content, or (b) a clearly bracketed
- * [PLACEHOLDER: ...] string. Nothing here is an invented address,
- * phone number, institution name, or social handle — see the Phase 3
- * engineering report for the exact list of what needs replacing.
+ * Contact/institution values are sourced from src/content/contact.ts
+ * — the single source of truth shared with the /iletisim page. Do
+ * not hardcode contact details here again; update contact.ts instead.
  */
 export function Footer() {
   // Static export bakes this in at build time, not per-request — it
@@ -28,14 +27,14 @@ export function Footer() {
 
         <div className="flex flex-col gap-1">
           <p className="font-medium text-brand-800">İletişim</p>
-          <p>[PLACEHOLDER: telefon numarası]</p>
-          <p>[PLACEHOLDER: e-posta adresi]</p>
+          <p>{INSTITUTION_CONTACT.phone}</p>
+          <p>{THERAPIST_CONTACT.email}</p>
         </div>
 
         <div className="flex flex-col gap-1">
           <p className="font-medium text-brand-800">Kurum &amp; Adres</p>
-          <p>[PLACEHOLDER: görev yapılan kurum adı]</p>
-          <p>[PLACEHOLDER: adres bilgisi]</p>
+          <p>{INSTITUTION_CONTACT.name}</p>
+          <p>{INSTITUTION_CONTACT.address}</p>
         </div>
 
         <div className="flex flex-col gap-1">
