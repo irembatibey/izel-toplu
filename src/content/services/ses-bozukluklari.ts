@@ -34,5 +34,5 @@ export const sesBozukluklari: ServiceDetail = {
     { question: 'Ses bozukluğu için önce hangi uzmana başvurmalıyım?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
     { question: 'Terapi süreci ne kadar sürer?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   ],
-  relatedSlugs: ['afazi', 'kekemelik'],
+  relatedSlugs: ['norolojik-dil-bozuklugu', 'kekemelik'],
 };

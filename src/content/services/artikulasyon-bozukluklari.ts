@@ -30,5 +30,5 @@ export const artikulasyonBozukluklari: ServiceDetail = {
     { question: 'Kaç yaşında değerlendirme yaptırmalıyım?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
     { question: 'Evde neler yapabilirim?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   ],
-  relatedSlugs: ['gecikmis-dil-gelisimi', 'kekemelik'],
+  relatedSlugs: ['gecikmis-konusma-bozuklugu', 'motor-konusma-bozukluklari'],
 };

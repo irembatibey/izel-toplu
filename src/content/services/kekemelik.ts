@@ -36,5 +36,5 @@ export const kekemelik: ServiceDetail = {
     { question: 'Kekemelik her yaşta terapiyle desteklenebilir mi?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
     { question: 'Değerlendirme süreci nasıl işliyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
   ],
-  relatedSlugs: ['artikulasyon-bozukluklari', 'gecikmis-dil-gelisimi'],
+  relatedSlugs: ['artikulasyon-bozukluklari', 'gecikmis-konusma-bozuklugu'],
 };
