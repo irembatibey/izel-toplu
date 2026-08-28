@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle2, GraduationCap, Award, HeartHandshake } from 'lucide-react';
+import { CheckCircle2, GraduationCap, HeartHandshake } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Reveal } from '@/components/common/Reveal';
 import { PageHero } from '@/components/common/PageHero';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
 import { ExperienceTimeline } from '@/components/about/ExperienceTimeline';
+import { CertificateGallery } from '@/components/about/CertificateGallery';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { EXPERIENCE_TIMELINE } from '@/content/about/experience';
+import { CERTIFICATES } from '@/content/about/certificates';
 
 export const metadata: Metadata = {
   title: 'Hakkımda',
@@ -136,14 +138,12 @@ export default function AboutPage() {
         <Container narrow>
           <Reveal>
             <SectionHeading id="about-certificates-heading" eyebrow="Sertifikalar" title="Sertifikalar ve Mesleki Eğitimler" />
-            <div className="mt-6 rounded-md border border-dashed border-brand-300 bg-neutral-bg-soft p-8 text-center">
-              <Award className="mx-auto mb-3 h-6 w-6 text-brand-300" aria-hidden="true" />
-              <p className="text-body text-neutral-text-soft">
-                Sertifika ve mesleki eğitim bilgileri yakında eklenecek.
-              </p>
-            </div>
           </Reveal>
         </Container>
+
+        <div className="mt-10">
+          <CertificateGallery certificates={CERTIFICATES} />
+        </div>
       </section>
 
       {/* Working philosophy */}

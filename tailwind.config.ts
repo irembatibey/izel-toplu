@@ -117,9 +117,20 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-3px)' },
         },
+        // About page addition (certificate gallery): the track is
+        // rendered twice back-to-back and moved exactly one set's
+        // width (-50%) — percentage-based, so the loop stays
+        // seamless at any viewport width without measuring pixels
+        // in JS. Very slow/linear on purpose (see animation below)
+        // to read as calm ambient movement, not a marquee.
+        'cert-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'gentle-float': 'gentle-float 6s ease-in-out infinite',
+        'cert-scroll': 'cert-scroll 80s linear infinite',
       },
     },
   },

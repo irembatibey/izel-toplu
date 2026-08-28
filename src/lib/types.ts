@@ -42,3 +42,12 @@ export interface ExperienceEntry {
   /** Marks the therapist's present, ongoing position. */
   current?: boolean;
 }
+
+export interface Certificate {
+  id: string;
+  title: string;
+  institution: string;
+  year: string;
+  imageSrc: string;
+  imageAlt: string;
+}

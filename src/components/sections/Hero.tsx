@@ -4,7 +4,7 @@ import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
 
-const PORTRAIT_SRC = '/images/placeholders/prof_foto.png';
+const PORTRAIT_SRC = '/images/placeholders/ana-sayfa-foto.jpeg';
 
 // Compact trust row under the CTAs. Two of these three are
 // explicit, bracketed placeholders — her actual years of experience
