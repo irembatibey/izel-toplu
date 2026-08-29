@@ -51,3 +51,8 @@ export interface Certificate {
   imageSrc: string;
   imageAlt: string;
 }
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+}

@@ -2,17 +2,22 @@ import { Quote } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Reveal } from '@/components/common/Reveal';
-
-const TESTIMONIAL_PLACEHOLDER_COUNT = 2;
+import { Button } from '@/components/common/Button';
+import { TESTIMONIALS } from '@/content/testimonials';
 
 /**
- * No real testimonials exist yet, and none are invented here — per
- * instruction. This lays out the future layout (dashed border is a
- * deliberate visual signal distinguishing it from finished content
- * elsewhere on the page) so real testimonials can drop in later
- * without a structural change.
+ * No fake or placeholder testimonials are ever shown here. If
+ * TESTIMONIALS (src/content/testimonials.ts) is empty, a calm empty
+ * state is shown instead, along with a subtle link to the dedicated
+ * submission page (/deneyim-paylas). There is no live, automatic
+ * approval workflow on this static site — publishing a testimonial
+ * means adding it to that data file and redeploying. See that
+ * file's comments for the full explanation, including what a fully
+ * automatic version would require.
  */
 export function TestimonialsPreview() {
+  const hasTestimonials = TESTIMONIALS.length > 0;
+
   return (
     <section aria-labelledby="testimonials-heading" className="bg-neutral-bg-soft py-20 md:py-28">
       <Container>
@@ -26,21 +31,32 @@ export function TestimonialsPreview() {
           />
         </Reveal>
 
-        <div className="mx-auto mt-12 grid gap-6 md:max-w-3xl md:grid-cols-2">
-          {Array.from({ length: TESTIMONIAL_PLACEHOLDER_COUNT }).map((_, index) => (
-            <Reveal key={index} delay={index * 0.1}>
-              <div className="rounded-md border border-dashed border-brand-300 bg-neutral-bg p-9 text-center">
-                <Quote className="mx-auto mb-4 h-6 w-6 text-brand-300" aria-hidden="true" />
-                <p className="text-body italic text-neutral-text-soft">
-                  [PLACEHOLDER: Danışan yorumu buraya eklenecek]
-                </p>
-                <p className="mt-4 text-caption font-semibold text-brand-800">
-                  [PLACEHOLDER: İsim / Yakınlık]
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        {hasTestimonials ? (
+          <div className="mx-auto mt-12 grid gap-6 md:max-w-3xl md:grid-cols-2">
+            {TESTIMONIALS.map((testimonial, index) => (
+              <Reveal key={`${testimonial.author}-${index}`} delay={index * 0.1}>
+                <div className="rounded-md border border-neutral-border bg-neutral-bg p-9 text-center shadow-sm">
+                  <Quote className="mx-auto mb-4 h-6 w-6 text-brand-300" aria-hidden="true" />
+                  <p className="text-body italic text-neutral-text-soft">{testimonial.quote}</p>
+                  <p className="mt-4 text-caption font-semibold text-brand-800">{testimonial.author}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        ) : (
+          <Reveal delay={0.1}>
+            <div className="mx-auto mt-12 max-w-md text-center">
+              <Quote className="mx-auto mb-4 h-6 w-6 text-brand-300" aria-hidden="true" />
+              <p className="text-body text-neutral-text-soft">Henüz danışan yorumu bulunmuyor.</p>
+            </div>
+          </Reveal>
+        )}
+
+        <Reveal delay={hasTestimonials ? 0.2 : 0.15} className="mt-10 flex justify-center">
+          <Button href="/deneyim-paylas" variant="ghost">
+            Deneyiminizi Paylaşın
+          </Button>
+        </Reveal>
       </Container>
     </section>
   );
