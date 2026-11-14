@@ -57,7 +57,7 @@ export function TrustIndicators() {
         <Reveal>
           <SectionHeading
             id="trust-indicators-heading"
-            eyebrow="Neden Ben?"
+
             title="Terapi Yaklaşımımın Temelleri"
           />
         </Reveal>

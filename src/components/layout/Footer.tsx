@@ -1,27 +1,32 @@
+import Image from 'next/image';
+import { Instagram, Linkedin } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SITE_NAME } from '@/lib/constants';
 import { THERAPIST_CONTACT, INSTITUTION_CONTACT } from '@/content/contact';
 
-/**
- * Server component, fully static — no interactivity, zero client JS.
- *
- * Contact/institution values are sourced from src/content/contact.ts
- * — the single source of truth shared with the /iletisim page. Do
- * not hardcode contact details here again; update contact.ts instead.
- */
 export function Footer() {
-  // Static export bakes this in at build time, not per-request — it
-  // will read correctly at each rebuild/deploy, but won't tick over
-  // automatically on Jan 1 without a new build. Acceptable for a
-  // site that rebuilds periodically; noting it so it's a documented
-  // tradeoff, not a surprise.
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-neutral-border bg-neutral-bg-soft">
       <Container className="grid gap-10 py-12 text-body text-neutral-text-soft md:grid-cols-4">
         <div>
-          <p className="font-serif text-h3 text-brand-800">{SITE_NAME}</p>
+          <div className="flex items-center gap-3">
+            <span className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-full">
+              <Image
+                src="/images/logo-cropped.png"
+                alt={`${SITE_NAME} logosu`}
+                fill
+                sizes="44px"
+                className="object-cover"
+              />
+            </span>
+
+            <p className="font-serif text-h3 text-brand-800">
+              {SITE_NAME}
+            </p>
+          </div>
+
           <p className="mt-2 max-w-xs">Dil ve Konuşma Terapisti</p>
         </div>
 
@@ -37,9 +42,28 @@ export function Footer() {
           <p>{INSTITUTION_CONTACT.address}</p>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-3">
           <p className="font-medium text-brand-800">Sosyal Medya</p>
-          <p className="italic text-caption">(bağlantılar henüz eklenmedi)</p>
+
+          <a
+            href={THERAPIST_CONTACT.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 transition-colors duration-250 ease-brand-ease hover:text-brand-800"
+          >
+            <Instagram className="h-4 w-4" aria-hidden="true" />
+            <span>@{THERAPIST_CONTACT.instagramHandle}</span>
+          </a>
+
+          <a
+            href={THERAPIST_CONTACT.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 transition-colors duration-250 ease-brand-ease hover:text-brand-800"
+          >
+            <Linkedin className="h-4 w-4" aria-hidden="true" />
+            <span>LinkedIn</span>
+          </a>
         </div>
       </Container>
 
@@ -47,7 +71,12 @@ export function Footer() {
         <Container className="py-6 text-caption text-neutral-text-soft">
           <p>
             © {currentYear} {SITE_NAME}. Tüm hakları saklıdır.{' '}
-            <span className="italic">(Gizlilik politikası yakında eklenecek)</span>
+            <a
+                href="/gizlilik"
+                className="italic transition-colors duration-250 ease-brand-ease hover:text-brand-800"
+            >
+              Gizlilik ve KVKK
+            </a>
           </p>
         </Container>
       </div>

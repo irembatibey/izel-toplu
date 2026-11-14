@@ -49,7 +49,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <nav aria-label="Breadcrumb" className="border-b border-neutral-border bg-neutral-bg-soft">

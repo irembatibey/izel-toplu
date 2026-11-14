@@ -68,38 +68,40 @@ export default function ContactPage() {
                     İzel Toplu
                   </p>
 
-                      <div className="mt-5 space-y-4">
-                        <a
-                          href={THERAPIST_CONTACT.mailtoHref}
-                            className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
-                        >
-                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
-                          <Mail
-                              className="h-4 w-4 text-brand-300"
-                              aria-hidden="true"
+                  <div className="mt-5 space-y-4">
+                    <a
+                      href={THERAPIST_CONTACT.mailtoHref}
+                      className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
+                    >
+                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
+                        <Mail
+                          className="h-4 w-4 text-brand-300"
+                          aria-hidden="true"
                         />
-                        </span>
-                        <span className="pt-1">{THERAPIST_CONTACT.email}</span>
-                        </a>
+                      </span>
 
-                        <a
-                          href={THERAPIST_CONTACT.instagramUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
-                        >
-                          <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
-                            <Instagram
-                              className="h-4 w-4 text-brand-300"
-                              aria-hidden="true"
-                            />
-                          </span>
-                          <span className="pt-1">
-                            @{THERAPIST_CONTACT.instagramHandle}
-                          </span>
-                        </a>
+                      <span className="pt-1">{THERAPIST_CONTACT.email}</span>
+                    </a>
 
-                      <a
+                    <a
+                      href={THERAPIST_CONTACT.instagramUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
+                    >
+                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
+                        <Instagram
+                          className="h-4 w-4 text-brand-300"
+                          aria-hidden="true"
+                        />
+                      </span>
+
+                      <span className="pt-1">
+                        @{THERAPIST_CONTACT.instagramHandle}
+                      </span>
+                    </a>
+
+                    <a
                       href={THERAPIST_CONTACT.linkedinUrl}
                       target="_blank"
                       rel="noreferrer"
@@ -111,6 +113,7 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                       </span>
+
                       <span className="pt-1">LinkedIn</span>
                     </a>
                   </div>
@@ -130,7 +133,7 @@ export default function ContactPage() {
                   </p>
 
                   <div className="mt-6 space-y-4">
-                      <a
+                    <a
                       href={INSTITUTION_CONTACT.phoneHref}
                       className="flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
                     >
@@ -140,10 +143,13 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">{INSTITUTION_CONTACT.phone}</span>
+
+                      <span className="pt-1">
+                        {INSTITUTION_CONTACT.phone}
+                      </span>
                     </a>
 
-                      <a
+                    <a
                       href={INSTITUTION_CONTACT.mailtoHref}
                       className="flex items-start gap-3 text-body text-neutral-bg/85 transition-colors duration-250 ease-brand-ease hover:text-neutral-bg"
                     >
@@ -153,18 +159,23 @@ export default function ContactPage() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">{INSTITUTION_CONTACT.email}</span>
+
+                      <span className="pt-1">
+                        {INSTITUTION_CONTACT.email}
+                      </span>
                     </a>
 
                     <div className="flex items-start gap-3 text-body text-neutral-bg/75">
                       <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-sm bg-neutral-bg/10">
                         <MapPin
                           className="h-4 w-4 text-brand-300"
-
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="pt-1">{INSTITUTION_CONTACT.address}</span>
+
+                      <span className="pt-1">
+                        {INSTITUTION_CONTACT.address}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -213,6 +224,18 @@ export default function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+            </div>
+
+            <div className="mt-5">
+              <a
+                href={INSTITUTION_CONTACT.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-body font-medium text-brand-700 transition-colors duration-250 ease-brand-ease hover:text-brand-900"
+              >
+                Google Maps&apos;te Görüntüle
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </Reveal>
         </Container>

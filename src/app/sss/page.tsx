@@ -19,10 +19,9 @@ export const metadata: Metadata = {
 // explicit placeholders — no real answers have been provided yet,
 // and none are invented here.
 const FAQ_ITEMS: FAQItem[] = [
-  { question: 'Seanslar ne kadar sürüyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
-  { question: 'Online seans yapıyor musunuz?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
+  { question: 'Seanslar ne kadar sürüyor?', answer: 'Seanslar 40 dakika sürmektedir.' },
   { question: 'İlk seansta neler oluyor?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
-  { question: 'Randevu nasıl alabilirim?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
+  { question: 'Randevu nasıl alabilirim?', answer: 'İletişim kısmından yardım alabilirsiniz.' },
 ];
 
 export default function FAQPage() {

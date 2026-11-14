@@ -29,6 +29,7 @@ export interface InstitutionContact {
   address: string;
   mapEmbedUrl: string;
   mapTitle: string;
+  mapsUrl: string;
 }
 
 export const THERAPIST_CONTACT: TherapistContact = {
@@ -50,8 +51,8 @@ export const INSTITUTION_CONTACT: InstitutionContact = {
   email: 'info@patikadilkonusma.com',
   mailtoHref: 'mailto:info@patikadilkonusma.com',
   address: INSTITUTION_ADDRESS,
-  mapEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent(
-    INSTITUTION_ADDRESS
-  )}&output=embed`,
+  mapEmbedUrl:'https://www.google.com/maps?q=40.353068484124954,27.989617787560483&output=embed',
   mapTitle: `${INSTITUTION_NAME} konumu`,
+  mapsUrl:
+  'https://www.google.com/maps/place/Patika+Dil,+Konu%C5%9Fma+ve+Geli%C5%9Fim+Merkezi/@40.3534119,27.9881372,16z/data=!4m14!1m7!3m6!1s0x14b5d3137e8b2951:0xd13388fa14f5d32a!2sPatika+Dil,+Konu%C5%9Fma+ve+Geli%C5%9Fim+Merkezi!8m2!3d40.3528682!4d27.9896092!16s%2Fg%2F11tn0cfcy2!3m5!1s0x14b5d3137e8b2951:0xd13388fa14f5d32a!8m2!3d40.3528682!4d27.9896092!16s%2Fg%2F11tn0cfcy2?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D',
 };
