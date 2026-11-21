@@ -39,11 +39,11 @@ export default function PrivacyPage() {
               <p className="mt-4">
                 6698 sayılı Kişisel Verilerin Korunması Kanunu
                 (KVKK) kapsamında, kişisel verilerinizin işlenmesine
-                ilişkin olarak veri sorumlusu İzel Toplu'dur.
+                ilişkin olarak veri sorumlusu İzel Toplu&apos;dur.
               </p>
 
               <p className="mt-4">
-                Bu bilgilendirme metni, İzel Toplu'ya ait web sitesinin
+                Bu bilgilendirme metni, İzel Toplu&apos;ya ait web sitesinin
                 ziyaret edilmesi ve web sitesinde sunulan iletişim
                 bağlantılarının kullanılması kapsamında geçerlidir.
               </p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
               </h2>
 
               <p className="mt-4">
-                Web sitemiz, ziyaretçilere İzel Toplu'nun çalışma
+                Web sitemiz, ziyaretçilere İzel Toplu&apos;nun çalışma
                 alanları ve sunduğu hizmetler hakkında bilgi vermek
                 amacıyla hazırlanmış tanıtım ve bilgilendirme
                 platformudur.
@@ -101,12 +101,8 @@ export default function PrivacyPage() {
               </p>
 
               <ul className="mt-4 list-disc space-y-2 pl-6">
-                <li>
-                  İletişim taleplerinin yanıtlanması.
-                </li>
-                <li>
-                  Bilgi ve hizmet taleplerinin değerlendirilmesi.
-                </li>
+                <li>İletişim taleplerinin yanıtlanması.</li>
+                <li>Bilgi ve hizmet taleplerinin değerlendirilmesi.</li>
                 <li>
                   Web sitesinin teknik güvenliğinin ve
                   işleyişinin sağlanması.
@@ -127,7 +123,7 @@ export default function PrivacyPage() {
               <p className="mt-4">
                 Web sitemizde ziyaretçilerin randevu ve danışma
                 süreçleri hakkında bilgi alabilmeleri için
-                Patika Dil Konuşma Terapisi'nin web sitesine
+                Patika Dil Konuşma Terapisi&apos;nin web sitesine
                 yönlendirme bağlantısı bulunmaktadır.
               </p>
 
@@ -140,7 +136,7 @@ export default function PrivacyPage() {
               </p>
 
               <p className="mt-4">
-                Patika Dil Konuşma Terapisi'nin web sitesi
+                Patika Dil Konuşma Terapisi&apos;nin web sitesi
                 üzerinden gerçekleştirilen iletişim ve randevu
                 işlemleri, bu web sitesinin dışında yürütülür.
                 Bu işlemler kapsamında paylaşılan kişisel veriler,
@@ -163,7 +159,7 @@ export default function PrivacyPage() {
               </h2>
 
               <p className="mt-4">
-                6698 sayılı Kişisel Verilerin Korunması Kanunu'nun
+                6698 sayılı Kişisel Verilerin Korunması Kanunu&apos;nun
                 11. maddesi kapsamında, kişisel verilerinizin
                 işlenmesi durumunda aşağıdaki haklara sahipsiniz:
               </p>
@@ -215,7 +211,7 @@ export default function PrivacyPage() {
               </ul>
 
               <p className="mt-4">
-                Haklarınıza ilişkin taleplerinizi, KVKK'nın
+                Haklarınıza ilişkin taleplerinizi, KVKK&apos;nın
                 13. maddesi ve ilgili mevzuat kapsamında
                 veri sorumlusuna iletebilirsiniz.
               </p>
