@@ -1,16 +1,3 @@
-/**
- * Real, approved contact information — single source of truth.
- *
- * Consumed by the Contact page (/iletisim) and the Footer. These are
- * the only two places real contact details should ever be rendered
- * from — do not redefine or duplicate these values elsewhere; import
- * from this file instead.
- *
- * href-ready fields (mailtoHref, phoneHref, mapEmbedUrl, mapTitle)
- * are precomputed here rather than built inline in JSX, so no
- * page/component needs to concatenate "mailto:"/"tel:" strings
- * itself.
- */
 
 export interface TherapistContact {
   email: string;
@@ -22,14 +9,8 @@ export interface TherapistContact {
 
 export interface InstitutionContact {
   name: string;
-  phone: string;
-  phoneHref: string;
   email: string;
   mailtoHref: string;
-  address: string;
-  mapEmbedUrl: string;
-  mapTitle: string;
-  mapsUrl: string;
 }
 
 export const THERAPIST_CONTACT: TherapistContact = {
@@ -40,19 +21,8 @@ export const THERAPIST_CONTACT: TherapistContact = {
   linkedinUrl: 'https://tr.linkedin.com/in/izel-toplu-0745b3363',
 };
 
-const INSTITUTION_NAME = 'Patika Dil, Konuşma ve Ergoterapi Merkezi';
-const INSTITUTION_ADDRESS =
-  'İhsaniye, Celal Atik Cd. No:56 D:1 A Blok, 10200 Bandırma/BALIKESİR';
-
 export const INSTITUTION_CONTACT: InstitutionContact = {
-  name: INSTITUTION_NAME,
-  phone: '0549 696 0110',
-  phoneHref: 'tel:+905496960110',
+  name: 'Patika Dil, Konuşma ve Ergoterapi Merkezi',
   email: 'info@patikadilkonusma.com',
   mailtoHref: 'mailto:info@patikadilkonusma.com',
-  address: INSTITUTION_ADDRESS,
-  mapEmbedUrl:'https://www.google.com/maps?q=40.353068484124954,27.989617787560483&output=embed',
-  mapTitle: `${INSTITUTION_NAME} konumu`,
-  mapsUrl:
-  'https://www.google.com/maps/place/Patika+Dil,+Konu%C5%9Fma+ve+Geli%C5%9Fim+Merkezi/@40.3534119,27.9881372,16z/data=!4m14!1m7!3m6!1s0x14b5d3137e8b2951:0xd13388fa14f5d32a!2sPatika+Dil,+Konu%C5%9Fma+ve+Geli%C5%9Fim+Merkezi!8m2!3d40.3528682!4d27.9896092!16s%2Fg%2F11tn0cfcy2!3m5!1s0x14b5d3137e8b2951:0xd13388fa14f5d32a!8m2!3d40.3528682!4d27.9896092!16s%2Fg%2F11tn0cfcy2?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D',
 };

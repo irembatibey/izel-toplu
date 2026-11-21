@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle2, GraduationCap, HeartHandshake } from 'lucide-react';
+import { CheckCircle2, GraduationCap } from 'lucide-react';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Reveal } from '@/components/common/Reveal';
@@ -29,7 +29,7 @@ const APPROACH_POINTS = [
   'Kanıta dayalı, güncel yöntemlerle desteklenen terapi süreçleri.',
   'Her danışan için kişiye özel planlanan, esnek terapi programları.',
   'Çocuk ve yetişkin danışanlarla geniş klinik deneyim.',
-  'Gerektiğinde aile ve diğer uzmanlarla koordineli çalışma.',
+  'Aile ve diğer uzmanlarla koordineli çalışma.',
 ] as const;
 
 // Real education information as provided — no dates, institutions,
@@ -145,23 +145,6 @@ export default function AboutPage() {
           <CertificateGallery certificates={CERTIFICATES} />
         </div>
       </section>
-
-      {/* Working philosophy */}
-      <section aria-labelledby="about-philosophy-heading" className="bg-neutral-bg-soft py-20 md:py-28">
-        <Container narrow>
-          <Reveal>
-            <SectionHeading id="about-philosophy-heading" eyebrow="Çalışma Felsefesi" title="Çalışma Felsefem" />
-            <div className="mt-6 flex items-start gap-3">
-              <HeartHandshake className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta" aria-hidden="true" />
-              <p className="text-body text-neutral-text-soft">
-                Her danışanın kendine özgü bir yolculuğu olduğuna inanıyorum. Güven, şeffaflık ve
-                düzenli iletişim, bu yolculuk boyunca çalışma şeklimin temelini oluşturuyor.
-              </p>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
       <FinalCTA />
     </>
   );

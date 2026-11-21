@@ -48,7 +48,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
       className={clsx(
         'sticky top-0 z-50 border-b transition-colors duration-300 ease-brand-ease',
         isScrolled
-          ? 'border-neutral-border bg-neutral-bg/90 shadow-sm backdrop-blur-sm'
+          ? 'border-neutral-border bg-neutral-bg shadow-sm'
           : 'border-transparent bg-transparent'
       )}
     >

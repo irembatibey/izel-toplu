@@ -1,3 +1,4 @@
+
 /**
  * Site-wide constants.
  *
@@ -7,7 +8,7 @@
  * engineering report for the full list.
  */
 
-export const SITE_NAME = 'İzel Toplu';
+export const SITE_NAME = 'Dil ve Konuşma Terapisti İzel Toplu';
 export const SITE_TITLE = 'İzel Toplu | Dil ve Konuşma Terapisti';
 
 // Reflects the approved information architecture — İzel Toplu is
@@ -25,10 +26,10 @@ export const SITE_URL_PLACEHOLDER = 'https://example.com';
 export const NAV_LINKS = [
   { href: '/hakkimda', label: 'Hakkımda' },
   { href: '/hizmetler', label: 'Hizmetler' },
-  { href: '/sss', label: 'SSS' },
   { href: '/iletisim', label: 'İletişim' },
 ] as const;
 
 // Public, non-secret Formspree form ID. See .env.example — real
 // value is supplied via NEXT_PUBLIC_FORMSPREE_ENDPOINT before deploy.
-export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? '';
+export const FORMSPREE_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? '';

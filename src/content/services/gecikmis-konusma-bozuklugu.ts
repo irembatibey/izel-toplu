@@ -38,7 +38,7 @@ export const gecikmisKonusmaBozuklugu: ServiceDetail = {
     'Gecikmiş konuşmada terapi süreci, çocuğun bireysel ihtiyaçlarına göre planlanır. İlk aşamada çocuğun dil anlama ve ifade etme becerileri detaylı şekilde değerlendirilir; bu değerlendirme sonucunda çocuğa özel hedefler belirlenir ve uygun bir terapi programı oluşturulur. Seanslarda; kelime dağarcığını artırma, cümle kurma, iletişim başlatma ve sürdürme gibi beceriler oyun temelli çalışmalarla desteklenir. Ailelerin sürece aktif katılımı oldukça önemlidir; seans dışında evde uygulanabilecek öneriler paylaşılır.',
   faq: [
     { question: 'Kaç yaşında değerlendirme yaptırmalıyım?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
-    { question: 'Evde neler yapabilirim?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
+
   ],
   relatedSlugs: ['artikulasyon-bozukluklari', 'otizm-spektrum-bozuklugu'],
 };

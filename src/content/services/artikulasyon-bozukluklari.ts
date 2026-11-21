@@ -28,7 +28,7 @@ export const artikulasyonBozukluklari: ServiceDetail = {
     'Terapi süreci, bireyin yaşına ve ihtiyaçlarına göre özel olarak planlanır. İlk aşamada hangi seslerde zorlanma yaşandığı detaylı şekilde değerlendirilir ve buna uygun hedefler belirlenir. Seanslarda, öncelikle seslerin doğru üretimi öğretilir; ardından bu sesler hece, kelime ve cümle içinde aşamalı olarak çalışılarak günlük konuşmaya aktarılması hedeflenir. Gerekli durumlarda ağız-dil egzersizleri ile konuşma organlarının koordinasyonu desteklenir. Düzenli takip ve iş birliği ile, konuşma seslerinin daha doğru ve anlaşılır şekilde kullanılması sağlanır.',
   faq: [
     { question: 'Kaç yaşında değerlendirme yaptırmalıyım?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
-    { question: 'Evde neler yapabilirim?', answer: '[PLACEHOLDER: yanıt eklenecek]' },
+
   ],
   relatedSlugs: ['gecikmis-konusma-bozuklugu', 'motor-konusma-bozukluklari'],
 };

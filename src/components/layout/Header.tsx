@@ -14,12 +14,12 @@ export function Header() {
           href="/"
           className="flex items-center gap-2.5 font-serif text-h3 text-brand-800 transition-colors duration-250 ease-brand-ease hover:text-brand-cta"
         >
-          <span className="relative h-9 w-9 flex-shrink-0 overflow-hidden rounded-full">
+          <span className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full">
             <Image
               src="/images/logo-cropped.png"
               alt={`${SITE_NAME} logosu`}
               fill
-              sizes="36px"
+              sizes="48px"
               className="object-cover"
               priority
             />

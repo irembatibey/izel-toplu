@@ -4,7 +4,7 @@ import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
 
-const PORTRAIT_SRC = '/images/placeholders/ana-sayfa-foto.jpeg';
+const PORTRAIT_SRC = '/images/portrait/about_photo.jpeg';
 
 // Compact trust row under the CTAs. Two of these three are
 // explicit, bracketed placeholders — her actual years of experience
@@ -19,7 +19,6 @@ const PORTRAIT_SRC = '/images/placeholders/ana-sayfa-foto.jpeg';
 // as "time/experience", a closer semantic match for what this
 // item will eventually say.
 const HERO_TRUST_ITEMS = [
-  { icon: Clock, label: '1 yıl deneyim' },
   { icon: Building2, label: 'Bandırma Patika Dil, Konuşma ve Ergoterapi Merkezi' },
   { icon: Users, label: 'Çocuk ve yetişkin danışanlar' },
 ] as const;
@@ -109,7 +108,7 @@ export function Hero() {
               of text floating with only gap spacing between them. */}
           <Reveal delay={0.4}>
             <ul className="flex flex-wrap gap-x-0 gap-y-3 pt-4">
-              {HERO_TRUST_ITEMS.map((item, index) => (
+              {HERO_TRUST_ITEMS.map((item, ) => (
                 <li
                   key={item.label}
                   className="flex items-center gap-2 border-brand-200 pl-4 pr-4 text-caption text-neutral-text-soft first:pl-0 [&:not(:first-child)]:border-l"
