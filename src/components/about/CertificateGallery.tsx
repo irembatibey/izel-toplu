@@ -335,9 +335,11 @@ export function CertificateGallery({
             <>
               <div className="relative aspect-[4/3] w-full bg-brand-surface">
                 <Image
+                  key={activeCertificate.imageSrc}
                   src={activeCertificate.imageSrc}
                   alt={activeCertificate.imageAlt}
                   fill
+                  unoptimized
                   sizes="(min-width: 640px) 512px, 90vw"
                   className="object-contain"
                 />
