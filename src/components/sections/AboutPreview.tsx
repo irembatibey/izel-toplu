@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/common/SectionHeading';
 import { Button } from '@/components/common/Button';
 import { Reveal } from '@/components/common/Reveal';
 
-const PORTRAIT_SRC = '/images/portrait/about_photo.jpeg';
+const PORTRAIT_SRC = '/images/portrait/mainpage.jpeg';
 
 /**
  * Intentionally short and generic. Her actual personal narrative

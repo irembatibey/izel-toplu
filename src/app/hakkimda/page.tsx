@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: 'İzel Toplu hakkında — eğitim, klinik deneyim, yaklaşım ve çalışma felsefesi.',
 };
 
-const PORTRAIT_SRC = '/images/portrait/about_photo.jpeg';
+const PORTRAIT_SRC = '/images/portrait/mainpage.jpeg';
 
 // Approach points restate the same approved strength categories used
 // on the homepage (evidence-based, individualized, cross-age

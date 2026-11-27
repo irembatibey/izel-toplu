@@ -7,7 +7,7 @@ import { Breadcrumb } from '@/components/common/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Gizlilik ve KVKK',
   description:
-    'İzel Toplu web sitesinin gizlilik uygulamaları ve kişisel verilerin korunmasına ilişkin bilgilendirme.',
+    'İzel Toplu web sitesinin gizlilik uygulamaları, kişisel verilerin işlenmesi ve korunmasına ilişkin bilgilendirme.',
 };
 
 export default function PrivacyPage() {
@@ -38,14 +38,16 @@ export default function PrivacyPage() {
 
               <p className="mt-4">
                 6698 sayılı Kişisel Verilerin Korunması Kanunu
-                (KVKK) kapsamında, kişisel verilerinizin işlenmesine
-                ilişkin olarak veri sorumlusu İzel Toplu&apos;dur.
+                (KVKK) kapsamında, bu web sitesi aracılığıyla
+                gerçekleştirilen kişisel veri işleme faaliyetleri
+                bakımından veri sorumlusu İzel Toplu&apos;dur.
               </p>
 
               <p className="mt-4">
-                Bu bilgilendirme metni, İzel Toplu&apos;ya ait web sitesinin
-                ziyaret edilmesi ve web sitesinde sunulan iletişim
-                bağlantılarının kullanılması kapsamında geçerlidir.
+                Bu bilgilendirme metni, İzel Toplu&apos;ya ait web
+                sitesinin ziyaret edilmesi ve web sitesinde sunulan
+                iletişim bağlantılarının kullanılması kapsamında
+                geçerlidir.
               </p>
             </section>
 
@@ -74,9 +76,9 @@ export default function PrivacyPage() {
               <p className="mt-4">
                 Bununla birlikte, web sitesinin teknik altyapısı
                 ve barındırma hizmetleri kapsamında IP adresi,
-                erişim zamanı ve tarayıcı bilgileri gibi teknik
-                veriler ilgili altyapı sağlayıcıları tarafından
-                işlenebilir.
+                erişim zamanı, istek bilgileri ve tarayıcı veya
+                cihaz bilgileri gibi teknik veriler barındırma
+                sağlayıcısı tarafından işlenebilir.
               </p>
 
               <p className="mt-4">
@@ -114,10 +116,172 @@ export default function PrivacyPage() {
               </ul>
             </section>
 
-            {/* 4. Üçüncü Taraf Hizmetler */}
+            {/* 4. Hosting ve Teknik Erişim Kayıtları */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                4. Üçüncü Taraf Hizmetler ve Harici Bağlantılar
+                4. Hosting Hizmeti ve Teknik Erişim Kayıtları
+              </h2>
+
+              <p className="mt-4">
+                Web sitemiz, GitHub tarafından sunulan GitHub Pages
+                statik web sitesi barındırma hizmeti aracılığıyla
+                yayınlanmaktadır.
+              </p>
+
+              <p className="mt-4">
+                GitHub&apos;ın resmî dokümantasyonunda belirtildiği
+                üzere, GitHub Pages üzerinden yayınlanan bir web
+                sitesi ziyaret edildiğinde ziyaretçinin IP adresi
+                güvenlik amaçlarıyla kaydedilmekte ve
+                saklanmaktadır. Bu işlem, ziyaretçinin GitHub
+                hesabına giriş yapmış olmasına bağlı değildir.
+              </p>
+
+              <p className="mt-4">
+                GitHub&apos;ın genel gizlilik bildiriminde ayrıca
+                IP adresi, cihaz bilgileri, istek tarih ve saatleri
+                ve web sitesi kullanım bilgileri gibi verilerin
+                hizmetlerin sunulması, güvenliğin sağlanması ve
+                teknik sorunların giderilmesi gibi amaçlarla
+                işlenebileceği açıklanmaktadır.
+              </p>
+
+              <p className="mt-4">
+                Bu teknik kayıtların işlenmesi GitHub&apos;ın kendi
+                hizmetleri kapsamında yürüttüğü veri işleme
+                faaliyetlerini de içermektedir. Bu faaliyetler
+                bakımından GitHub&apos;ın kendi gizlilik bildirimi
+                ve ilgili hizmet koşulları geçerlidir.
+              </p>
+
+              <p className="mt-4">
+                GitHub, GitHub Pages ziyaretçi IP kayıtları için
+                kamuya açık dokümantasyonunda kesin bir saklama
+                süresi belirtmemektedir. Saklama süresi, GitHub&apos;ın
+                ilgili güvenlik ve veri saklama politikaları
+                çerçevesinde belirlenmektedir.
+              </p>
+
+              <p className="mt-4">
+                GitHub&apos;ın gizlilik uygulamaları hakkında
+                ayrıntılı bilgiye aşağıdaki bağlantılardan
+                ulaşabilirsiniz:
+              </p>
+
+              <ul className="mt-4 list-disc space-y-2 pl-6">
+                <li>
+                  <a
+                    href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-800 underline underline-offset-4"
+                  >
+                    GitHub Pages – Veri Toplama Açıklaması
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-800 underline underline-offset-4"
+                  >
+                    GitHub Genel Gizlilik Bildirimi
+                  </a>
+                </li>
+              </ul>
+            </section>
+
+            {/* 5. Yurt Dışına Veri Aktarımı */}
+            <section>
+              <h2 className="font-serif text-h3 text-brand-800">
+                5. Yurt Dışına Veri Aktarımı
+              </h2>
+
+              <p className="mt-4">
+                Web sitemizin GitHub Pages altyapısı üzerinden
+                yayınlanması nedeniyle, web sitesinin ziyaret
+                edilmesi sırasında oluşan teknik erişim kayıtları
+                GitHub tarafından işlenebilmektedir.
+              </p>
+
+              <p className="mt-4">
+                GitHub, kişisel verileri Amerika Birleşik
+                Devletleri&apos;nde ve kendisinin, bağlı şirketlerinin
+                veya alt hizmet sağlayıcılarının faaliyet
+                gösterdiği diğer ülkelerde saklayabileceğini
+                ve işleyebileceğini belirtmektedir.
+              </p>
+
+              <p className="mt-4">
+                GitHub, kendi hizmetleri kapsamında gerçekleştirdiği
+                uluslararası veri aktarımlarında uygulanabilir
+                veri koruma düzenlemeleri ve sözleşmesel güvenceler
+                çerçevesinde hareket ettiğini açıklamaktadır.
+                Kullanılan hizmete ve veri işleme faaliyetinin
+                niteliğine göre standart sözleşmeler ve diğer
+                aktarım mekanizmaları söz konusu olabilmektedir.
+              </p>
+
+              <p className="mt-4">
+                GitHub ayrıca hizmetlerinin sunulması için alt
+                hizmet sağlayıcılarla çalışabilmektedir. Bu
+                sağlayıcıların listesi GitHub tarafından
+                yayımlanmaktadır.
+              </p>
+
+              <p className="mt-4">
+                Türkiye&apos;de bulunan ziyaretçilere ait kişisel
+                verilerin yurt dışına aktarılması bakımından
+                6698 sayılı KVKK&apos;nın 9. maddesinde düzenlenen
+                hükümler ve uygulanabilir aktarım şartları
+                dikkate alınmaktadır.
+              </p>
+
+              <p className="mt-4">
+                GitHub&apos;ın uluslararası veri aktarımları ve alt
+                hizmet sağlayıcıları hakkında ayrıntılı bilgiye
+                aşağıdaki bağlantılardan ulaşabilirsiniz:
+              </p>
+
+              <ul className="mt-4 list-disc space-y-2 pl-6">
+                <li>
+                  <a
+                    href="https://github.com/subprocessors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-800 underline underline-offset-4"
+                  >
+                    GitHub Alt Hizmet Sağlayıcıları
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/trust-center/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-800 underline underline-offset-4"
+                  >
+                    GitHub Trust Center – Privacy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.kvkk.gov.tr/Icerik/2053/Yurtdisina-Aktarim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-800 underline underline-offset-4"
+                  >
+                    KVKK – Yurt Dışına Kişisel Veri Aktarımı
+                  </a>
+                </li>
+              </ul>
+            </section>
+
+            {/* 6. Üçüncü Taraf Hizmetler */}
+            <section>
+              <h2 className="font-serif text-h3 text-brand-800">
+                6. Üçüncü Taraf Hizmetler ve Harici Bağlantılar
               </h2>
 
               <p className="mt-4">
@@ -145,17 +309,17 @@ export default function PrivacyPage() {
               </p>
 
               <p className="mt-4">
-                Web sitemizin teknik olarak yayınlanması ve
-                barındırılması için kullanılan altyapı
+                Web sitemizin yayınlanması ve teknik olarak
+                işletilmesi için kullanılan altyapı
                 sağlayıcılarının kendi hizmetleri kapsamında
                 teknik verileri işleyebilmesi mümkündür.
               </p>
             </section>
 
-            {/* 5. Haklar */}
+            {/* 7. İlgili Kişinin Hakları */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                5. İlgili Kişinin Hakları
+                7. İlgili Kişinin Hakları
               </h2>
 
               <p className="mt-4">
@@ -209,26 +373,50 @@ export default function PrivacyPage() {
                   hâlinde zararın giderilmesini talep etme.
                 </li>
               </ul>
-
-              <p className="mt-4">
-                Haklarınıza ilişkin taleplerinizi, KVKK&apos;nın
-                13. maddesi ve ilgili mevzuat kapsamında
-                veri sorumlusuna iletebilirsiniz.
-              </p>
             </section>
 
-            {/* 6. İletişim */}
+            {/* 8. KVKK Başvuru ve İletişim */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                6. İletişim
+                8. KVKK Kapsamındaki Başvurular ve İletişim
               </h2>
 
               <p className="mt-4">
-                Gizlilik uygulamalarımız ve kişisel verilerinizin
-                korunmasıyla ilgili sorularınız veya KVKK
-                kapsamındaki talepleriniz için veri sorumlusu
-                İzel Toplu ile web sitesinde paylaşılan e-posta
-                iletişim kanalı üzerinden iletişime geçebilirsiniz.
+                Kişisel verilerinizin işlenmesine ilişkin olarak
+                6698 sayılı KVKK&apos;nın 11. maddesinde belirtilen
+                haklarınızı kullanmak ve Kanun&apos;un 13. maddesi
+                kapsamında veri sorumlusuna başvurmak için
+                aşağıdaki e-posta adresi üzerinden iletişime
+                geçebilirsiniz:
+              </p>
+
+              <p className="mt-4">
+                <strong>Veri sorumlusu:</strong> İzel Toplu
+              </p>
+
+              <p className="mt-2">
+                <strong>KVKK başvuru ve iletişim e-posta adresi:</strong>{' '}
+                <a
+                  href="mailto:dkt.izeltoplu@gmail.com"
+                  className="text-brand-800 underline underline-offset-4"
+                >
+                  dkt.izeltoplu@gmail.com
+                </a>
+              </p>
+
+              <p className="mt-4">
+                Başvurunuzda talebinizi açıkça belirtmeniz ve
+                kimliğinizin doğrulanabilmesi için gerekli
+                bilgileri sağlamanız gerekebilir. Başvurular,
+                KVKK ve ilgili mevzuatta belirtilen usul ve
+                esaslar çerçevesinde değerlendirilir.
+              </p>
+
+              <p className="mt-4">
+                E-posta yoluyla başvuru, ilgili mevzuatta
+                belirtilen başvuru yöntemleri ve kimlik
+                doğrulama koşulları dikkate alınarak
+                değerlendirilir.
               </p>
             </section>
 
