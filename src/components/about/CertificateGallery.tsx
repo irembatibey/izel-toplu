@@ -335,8 +335,8 @@ export function CertificateGallery({
             <>
               <div className="relative aspect-[4/3] w-full bg-brand-surface">
                 <Image
-                  key={activeCertificate.imageSrc}
-                  src={activeCertificate.imageSrc}
+                  key={`${activeCertificate.imageSrc}?v=2`}
+                  src={`${activeCertificate.imageSrc}?v=2`}
                   alt={activeCertificate.imageAlt}
                   fill
                   unoptimized
