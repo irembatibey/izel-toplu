@@ -112,12 +112,12 @@ export default function ContactPage() {
                 </p>
 
                 <h3 className="mt-3 font-serif text-h3 text-neutral-bg">
-                  Patika Dil ve Konuşma Merkezi
+                  Patika Dil Konuşma ve Ergoterapi Merkezi
                 </h3>
 
                 <p className="mt-3 max-w-lg text-body text-neutral-bg/75">
                   Randevu almak veya merkezde sunulan hizmetler hakkında
-                  bilgi edinmek için Patika Dil ve Konuşma Merkezi&apos;nin
+                  bilgi edinmek için Patika Dil Konuşma ve Ergoterapi Merkezi&apos;nin
                   iletişim sayfasını ziyaret edebilirsiniz.
                 </p>
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
                     variant="primary"
                     showArrow
                   >
-                    Patika ile İletişime Geçin
+                    Patika Dil Konuşma ve Ergoterapi Merkezi ile İletişime Geçin
                   </Button>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+
 import type { Certificate } from '@/lib/types';
 
 export const CERTIFICATES: Certificate[] = [
@@ -17,22 +18,7 @@ export const CERTIFICATES: Certificate[] = [
     imageSrc: '/images/certificates/certificate-02.jpeg',
     imageAlt: '6 Mart Avrupa Dil ve Konuşma Terapisi ve 16 Mart Yutma Farkındalık Günü sertifikası',
   },
-  {
-    id: 'certificate-3',
-    title: 'İstanbul Dil ve Konuşma Terapisi Zirvesi',
-    institution: 'Gençlik Durağı',
-    year: '2022',
-    imageSrc: '/images/certificates/certificate-03.jpeg',
-    imageAlt: 'İstanbul Dil ve Konuşma Terapisi Zirvesi sertifikası',
-  },
-  {
-    id: 'certificate-4',
-    title: 'KOSGEB Girişimcilik Eğitimi',
-    institution: 'KOSGEB',
-    year: '2023',
-    imageSrc: '/images/certificates/certificate-04.jpeg',
-    imageAlt: 'KOSGEB Girişimcilik Eğitimi sertifikası',
-  },
+
   {
     id: 'certificate-5',
     title: 'Kanser Haftası',
@@ -48,14 +34,6 @@ export const CERTIFICATES: Certificate[] = [
     year: '2024',
     imageSrc: '/images/certificates/certificate-06.jpeg',
     imageAlt: 'Dil ve Konuşma Terapisti Olmak sertifikası',
-  },
-  {
-    id: 'certificate-7',
-    title: 'Canva Eğitim ve Öğretmenler Zirvesi',
-    institution: 'Canva & Etkin Kampüs',
-    year: '2024',
-    imageSrc: '/images/certificates/certificate-07.jpeg',
-    imageAlt: 'Canva Eğitim ve Öğretmenler Zirvesi sertifikası',
   },
   {
     id: 'certificate-8',
@@ -123,12 +101,28 @@ export const CERTIFICATES: Certificate[] = [
     imageSrc: '/images/certificates/certificate-15.jpeg',
     imageAlt: 'DIR 101: An Introduction to DIR and DIRFloortime sertifikası',
   },
-      {
+  {
     id: 'certificate-16',
     title: 'Onur Belgesi',
     institution: 'İstinye Üniversitesi, Sağlık Bilimleri Fakültesi',
     year: '2026',
     imageSrc: '/images/certificates/Onur_Belgesi.png',
-    imageAlt: 'İstinye Üniversitesi, Sağlık Birimleri Fakültesi - Onur Belgesi',
+    imageAlt: 'İstinye Üniversitesi, Sağlık Bilimleri Fakültesi - Onur Belgesi',
+  },
+  {
+    id: 'certificate-17',
+    title: 'Gel Yeniden Başlayalım Programı Katılım Belgesi',
+    institution: 'iTravel Medya & Sinerji',
+    year: '2022',
+    imageSrc: '/images/certificates/certificate-17.png',
+    imageAlt: 'Gel Yeniden Başlayalım programı katılım belgesi',
+  },
+  {
+    id: 'certificate-18',
+    title: 'İstanbul Dil ve Konuşma Terapisi Zirvesi',
+    institution: 'Gençlik Durağı',
+    year: '2022',
+    imageSrc: '/images/certificates/certificate-18.png',
+    imageAlt: 'İstanbul Dil ve Konuşma Terapisi Zirvesi katılım belgesi',
   },
 ];

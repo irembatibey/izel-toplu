@@ -90,6 +90,19 @@ export function Footer() {
               Gizlilik ve KVKK
             </a>
           </div>
+
+          {/* Developer credit */}
+          <div className="border-t border-neutral-border/60 pt-4 text-center">
+            <a
+              href="https://www.linkedin.com/in/irembatibey/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="İrem Batıbey LinkedIn profili"
+              className="text-xs text-neutral-text-soft/60 transition-colors duration-200 hover:text-brand-cta"
+            >
+              Designed & Developed by İrem Batıbey
+            </a>
+          </div>
         </div>
       </Container>
     </footer>

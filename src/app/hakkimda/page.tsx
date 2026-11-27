@@ -30,7 +30,7 @@ const APPROACH_POINTS = [
 
 const EDUCATION_ITEMS = [
   'İstinye Üniversitesi, Sağlık Bilimleri Fakültesi — Dil ve Konuşma Terapisi (Lisans), 2026, onur derecesiyle mezuniyet',
-  'Psikoloji Yandal Programı — devam ediyor',
+  'İstinye Üniversitesi, İnsan ve Toplum Bilimleri Fakültesi — Psikoloji Yandal Programı (devam ediyor)',
 ] as const;
 
 export default function AboutPage() {
