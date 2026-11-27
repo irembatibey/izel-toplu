@@ -11,6 +11,15 @@ import type { LucideIcon } from 'lucide-react';
  * detail content to exist for a service to appear in a card grid.
  */
 
+export interface SymptomContent {
+  intro: string;
+  sections: {
+    title: string;
+    items: string[];
+  }[];
+  note?: string;
+}
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -24,6 +33,7 @@ export interface ServiceSummary {
 }
 
 export interface ServiceDetail extends ServiceSummary {
+  symptomContent?: SymptomContent;
   seoDescription: string;
   overview: string;
   symptoms: string[];

@@ -32,7 +32,10 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
 
       <ServiceHero service={service} />
 
-      <section aria-labelledby="service-overview-heading" className="py-20 md:py-28">
+      <section
+        aria-labelledby="service-overview-heading"
+        className="py-20 md:py-28"
+      >
         <Container narrow>
           <Reveal>
             <SectionHeading
@@ -47,6 +50,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
         </Container>
       </section>
 
+      {/* Belirtiler */}
       <section
         aria-labelledby="service-symptoms-heading"
         className="bg-neutral-bg-soft py-20 md:py-28"
@@ -58,25 +62,72 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
               eyebrow="Belirtiler"
               title="Nelere Dikkat Etmeli?"
             />
-            <ul className="mt-6 space-y-3">
-              {service.symptoms.map((symptom) => (
-                <li
-                  key={symptom}
-                  className="flex items-start gap-3 text-body text-neutral-text-soft"
-                >
-                  <CheckCircle2
-                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta"
-                    aria-hidden="true"
-                  />
-                  {symptom}
-                </li>
-              ))}
-            </ul>
+
+            {service.symptomContent ? (
+              <div className="mt-6 space-y-8">
+                <p className="text-body leading-relaxed text-neutral-text-soft">
+                  {service.symptomContent.intro}
+                </p>
+
+                {service.symptomContent.sections.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="font-serif text-h4 text-brand-800">
+                      {section.title}
+                    </h3>
+
+                    <ul className="mt-4 space-y-4">
+                      {section.items.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-body text-neutral-text-soft"
+                        >
+                          <CheckCircle2
+                            className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta"
+                            aria-hidden="true"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+
+                {service.symptomContent.note && (
+                  <div className="rounded-md border border-brand-200 bg-white p-5">
+                    <p className="text-body leading-relaxed text-neutral-text-soft">
+                      <strong className="text-brand-800">
+                        Kısa Hatırlatma:
+                      </strong>{' '}
+                      {service.symptomContent.note}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <ul className="mt-6 space-y-3">
+                {service.symptoms.map((symptom) => (
+                  <li
+                    key={symptom}
+                    className="flex items-start gap-3 text-body text-neutral-text-soft"
+                  >
+                    <CheckCircle2
+                      className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-cta"
+                      aria-hidden="true"
+                    />
+                    {symptom}
+                  </li>
+                ))}
+              </ul>
+            )}
           </Reveal>
         </Container>
       </section>
 
-      <section aria-labelledby="service-who-heading" className="py-20 md:py-28">
+      {/* Kimler İçin */}
+      <section
+        aria-labelledby="service-who-heading"
+        className="py-20 md:py-28"
+      >
         <Container narrow>
           <Reveal>
             <SectionHeading
@@ -97,6 +148,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
         </Container>
       </section>
 
+      {/* Terapi Süreci */}
       <section
         aria-labelledby="service-process-heading"
         className="bg-neutral-bg-soft py-20 md:py-28"
@@ -115,6 +167,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
         </Container>
       </section>
 
+      {/* Hizmete Özel SSS */}
       {service.faq.length > 0 && (
         <section
           aria-labelledby="service-faq-heading"
@@ -135,6 +188,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
         </section>
       )}
 
+      {/* İlgili Hizmetler */}
       {relatedServices.length > 0 && (
         <section
           aria-labelledby="service-related-heading"
@@ -150,6 +204,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 className="mx-auto"
               />
             </Reveal>
+
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {relatedServices.map((related, index) => (
                 <Reveal key={related.slug} delay={index * 0.08}>

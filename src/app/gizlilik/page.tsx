@@ -278,10 +278,30 @@ export default function PrivacyPage() {
               </ul>
             </section>
 
-            {/* 6. Üçüncü Taraf Hizmetler */}
+            {/* 6. Çerezler ve Çerez Yönetimi */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                6. Üçüncü Taraf Hizmetler ve Harici Bağlantılar
+                6. Çerezler ve Çerez Yönetimi
+              </h2>
+
+              <p className="mt-4">
+                Web sitemizde kullanıcı davranışlarını izlemek
+                veya reklam amacıyla kullanılan analitik ve
+                takip çerezleri bulunmamaktadır.
+              </p>
+
+              <p className="mt-4">
+                Bununla birlikte, web sitesinin barındırılması
+                veya üçüncü taraf hizmetlerin kullanılması
+                sırasında ilgili hizmet sağlayıcılar tarafından
+                teknik amaçlı veriler işlenebilir.
+              </p>
+            </section>
+
+            {/* 7. Üçüncü Taraf Hizmetler */}
+            <section>
+              <h2 className="font-serif text-h3 text-brand-800">
+                7. Üçüncü Taraf Hizmetler ve Harici Bağlantılar
               </h2>
 
               <p className="mt-4">
@@ -316,10 +336,10 @@ export default function PrivacyPage() {
               </p>
             </section>
 
-            {/* 7. İlgili Kişinin Hakları */}
+            {/* 8. İlgili Kişinin Hakları */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                7. İlgili Kişinin Hakları
+                8. İlgili Kişinin Hakları
               </h2>
 
               <p className="mt-4">
@@ -375,10 +395,10 @@ export default function PrivacyPage() {
               </ul>
             </section>
 
-            {/* 8. KVKK Başvuru ve İletişim */}
+            {/* 9. KVKK Başvuru ve İletişim */}
             <section>
               <h2 className="font-serif text-h3 text-brand-800">
-                8. KVKK Kapsamındaki Başvurular ve İletişim
+                9. KVKK Kapsamındaki Başvurular ve İletişim
               </h2>
 
               <p className="mt-4">
