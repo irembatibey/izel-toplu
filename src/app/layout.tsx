@@ -1,31 +1,19 @@
+
 import type { Metadata, Viewport } from 'next';
 import { Newsreader, Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { SITE_NAME, SITE_TITLE, SITE_DESCRIPTION, SITE_URL_PLACEHOLDER } from '@/lib/constants';
+import {
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_URL,
+} from '@/lib/constants';
 import '@/styles/globals.css';
 
 /**
- * next/font: self-hosted at build time (no runtime Google Fonts
- * request — see the performance strategy agreed earlier). Both
- * fonts include 'latin-ext', not just 'latin' — required for
- * Turkish characters (İ, ş, ğ, ç, ö, ü) to render in the actual
- * loaded font rather than silently falling back to a system font.
- *
- * Newsreader needs one extra setting: next/font tries to
- * auto-generate a metric-matched fallback font (adjustFontFallback,
- * on by default) by looking up each family in an internal
- * precomputed metrics table, and Newsreader isn't in that table —
- * a known, confirmed-harmless limitation (see Next.js issue
- * trackers for "Failed to find font override values"), not a
- * problem with our config. The font still loads and renders
- * correctly; only the automatic fallback-sizing feature is
- * unavailable for this specific family. Disabling it explicitly
- * below avoids Next repeatedly failing that lookup and warning on
- * every build. We already declared a manual fallback stack
- * ('Georgia', 'serif') in tailwind.config.ts, so layout shift is
- * still mitigated — just not with pixel-matched metrics the way
- * Inter's fallback is.
+ * Fonts are self-hosted at build time.
+ * latin-ext is included for Turkish characters.
  */
 const newsreader = Newsreader({
   subsets: ['latin', 'latin-ext'],
@@ -44,79 +32,110 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // PLACEHOLDER — real custom domain not configured yet (deployment
-  // phase). Required for OG/Twitter image URL resolution; replace
-  // before deploy or social share previews will point at the wrong
-  // domain.
-  metadataBase: new URL(SITE_URL_PLACEHOLDER),
+  metadataBase: new URL(SITE_URL),
+
+  applicationName: SITE_NAME,
+
   title: {
     default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
+
   description: SITE_DESCRIPTION,
- icons: {
-  icon: [
+
+  authors: [
     {
-      url: '/favicon-32.png',
-      sizes: '32x32',
-      type: 'image/png',
-    },
-    {
-      url: '/favicon-16.png',
-      sizes: '16x16',
-      type: 'image/png',
-    },
-    {
-      url: '/favicon.ico',
+      name: 'İzel Toplu',
+      url: SITE_URL,
     },
   ],
-  apple: '/apple-touch-icon.png',
-},
+
+  creator: 'İzel Toplu',
+  publisher: 'İzel Toplu',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+      },
+      {
+        url: '/favicon-16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon-32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon-48.png',
+        sizes: '48x48',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon-96.png',
+        sizes: '96x96',
+        type: 'image/png',
+      },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    url: SITE_URL,
     type: 'website',
     locale: 'tr_TR',
     siteName: SITE_NAME,
     images: [
       {
-        // PLACEHOLDER — /public/og-image.png does not exist yet.
-        // Needs a real 1200x630 image before deploy, or social
-        // platforms will show a broken preview image.
         url: '/og-image.png',
         width: 1200,
         height: 630,
+        alt: 'Dil ve Konuşma Terapisti İzel Toplu',
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.png'], // PLACEHOLDER — see above
+    images: ['/og-image.png'],
   },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  // Brand-800 (#2E4356), duplicated here deliberately: the
-  // theme-color meta tag is plain HTML and cannot consume a CSS
-  // custom property, so this is the one place a brand color is
-  // hardcoded rather than tokenized. If the brand-800 token value
-  // ever changes, this line needs updating alongside it.
   themeColor: '#2E4356',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="tr" className={`${newsreader.variable} ${inter.variable}`}>
+    <html
+      lang="tr"
+      className={`${newsreader.variable} ${inter.variable}`}
+    >
       <body className="flex min-h-screen flex-col font-sans">
-        {/*
-          Skip link: visually hidden until focused, lets keyboard
-          users jump straight to main content instead of tabbing
-          through the entire header/nav on every page.
-        */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-sm focus:bg-brand-cta focus:px-4 focus:py-2 focus:text-neutral-bg"
